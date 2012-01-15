@@ -110,7 +110,6 @@
       script = document.createElement("script")
     ;
     script.src = prefix + src + suffix + ".js";
-    alert(script.src);
     script[ADD_EVENT_LISTENER]("load", self, false);
     script[ADD_EVENT_LISTENER]("error", self, false);
     documentElement.insertBefore(
@@ -165,6 +164,8 @@
     prefix = suffix;
     suffix = "";
   }
+
+  alert([prefix, suffix].join("\n"));
 
   defineProperty(window, "yuno", {value: yuno});
 
