@@ -152,6 +152,7 @@
       }
     },
     script = document.getElementsByTagName("script"),
+    asd = alert(script[script.length - 1].src),
     suffix = script[script.length - 1].src.replace(/^(.*)yuno(\.min)?\.js(?:[?#].*)?$/i, "$1$2"),
     i = suffix.indexOf("."),
     prefix
