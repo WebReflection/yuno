@@ -12,12 +12,17 @@
       i < length; ++i
     ) {
       nmsp = window;
-      for (
-        current = a[i].split("."),
-        j = 0, len = current.length - 1; j < len; ++j
-      ) {
-        key = current[j];
-        nmsp = hasOwnProperty.call(nmsp, key) ? nmsp[key] : defineProperty(nmsp, key, {value: {}})[key];
+      if (/^[a-z]:/.test(a[i])) {
+        j = 0;
+        current = [a[i]];
+      } else {
+        for (
+          current = a[i].split("."),
+          j = 0, len = current.length - 1; j < len; ++j
+        ) {
+          key = current[j];
+          nmsp = hasOwnProperty.call(nmsp, key) ? nmsp[key] : defineProperty(nmsp, key, {value: {}})[key];
+        }
       }
       if (hasOwnProperty.call(nmsp, key = current[j])) {
         modules[i] = nmsp[key];
