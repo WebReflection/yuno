@@ -13,7 +13,7 @@
     ) {
       j = 0;
       nmsp = window;
-      if (/^[a-z]:/.test(a[i])) {
+      if (/^[a-z]+:/.test(a[i])) {
         current = [a[i]];
       } else {
         for (
