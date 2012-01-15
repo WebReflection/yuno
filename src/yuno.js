@@ -11,14 +11,14 @@
       result = {};
       i < length; ++i
     ) {
+      j = 0;
       nmsp = window;
       if (/^[a-z]:/.test(a[i])) {
-        j = 0;
         current = [a[i]];
       } else {
         for (
           current = a[i].split("."),
-          j = 0, len = current.length - 1; j < len; ++j
+          len = current.length - 1; j < len; ++j
         ) {
           key = current[j];
           nmsp = hasOwnProperty.call(nmsp, key) ? nmsp[key] : defineProperty(nmsp, key, {value: {}})[key];
@@ -110,6 +110,7 @@
       script = document.createElement("script")
     ;
     script.src = prefix + src + suffix + ".js";
+    alert(script.src);
     script[ADD_EVENT_LISTENER]("load", self, false);
     script[ADD_EVENT_LISTENER]("error", self, false);
     documentElement.insertBefore(
