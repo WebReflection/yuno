@@ -152,18 +152,14 @@
       }
     },
     script = document.getElementsByTagName("script"),
-    // https://raw.github.com/WebReflection/yuno/master/src/yuno.js
     prefix = script[script.length - 1].src.replace(/^(.*)yuno(\.min)?\.js(?:[?#].*)?$/i, "$1$2"),
     suffix = ".min"
   ;
 
-  if (prefix.slice(-4) == suffix) {
-    prefix = suffix.slice(0, -4);
-  } else {
-    suffix = "";
-  }
-
-  alert([prefix, suffix].join("\n"));
+  prefix.slice(-4) == suffix ?
+    prefix = prefix.slice(0, -4) :
+    suffix = ""
+  ;
 
   defineProperty(window, "yuno", {value: yuno});
 
