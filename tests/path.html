@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="../src/yuno.js"></script>
+    <script>
+    yuno.use("yuno.Object.Target", "yuno.Object.Handler").and(function (Target, Handler) {
+        alert([
+            yuno.Object.Target === Target && !!Target,
+            yuno.Object.Handler === Handler && !!Handler
+        ]);
+    });
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
