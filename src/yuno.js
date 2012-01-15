@@ -153,18 +153,13 @@
     },
     script = document.getElementsByTagName("script"),
     // https://raw.github.com/WebReflection/yuno/master/src/yuno.js
-    suffix = script[script.length - 1].src.replace(/^(.*)yuno(\.min)?\.js(?:[?#].*)?$/i, "$1$2"),
-    i = suffix.indexOf("."),
-    prefix
+    prefix = script[script.length - 1].src.replace(/^(.*)yuno(\.min)?\.js(?:[?#].*)?$/i, "$1$2"),
+    suffix = ".min"
   ;
 
-  alert([prefix, suffix].join("\n"));
-
-  if (~i) {
-    prefix = suffix.slice(0, i);
-    suffix = suffix.slice(script);
+  if (prefix.slice(-4) == suffix) {
+    prefix = suffix.slice(0, -4);
   } else {
-    prefix = suffix;
     suffix = "";
   }
 
