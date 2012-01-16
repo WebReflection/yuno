@@ -132,12 +132,25 @@
     downloading = {},
     hasOwnProperty = yuno.hasOwnProperty,
     slice = [].slice,
-    defineProperty = window.Object.defineProperty || function defineProperty(
+    defineProperty = window.Object.defineProperty,
+    script = document.getElementsByTagName("script"),
+    prefix = script[script.length - 1].src.replace(/^(.*)yuno(\.min)?\.js(?:[?#].*)?$/i, "$1$2"),
+    suffix = ".min"
+  ;
+
+  try {
+    if (!defineProperty({},"_",{value:1})._) {
+      throw 0;
+    }
+  } catch(_) {
+    defineProperty = function defineProperty(
       object, name, descriptor
     ) {
+        /*
       if (hasOwnProperty.call(object, name)) {
         throw "unable to redefine " + name;
       } else {
+        */
         if (hasOwnProperty.call(descriptor, "value")) {
           object[name] = descriptor.value;
         } else if (DEFINE_GETTER in object && DEFINE_SETTER in object) {
@@ -149,12 +162,9 @@
           }
         }
         return object;
-      }
-    },
-    script = document.getElementsByTagName("script"),
-    prefix = script[script.length - 1].src.replace(/^(.*)yuno(\.min)?\.js(?:[?#].*)?$/i, "$1$2"),
-    suffix = ".min"
-  ;
+      // }
+    };
+  }
 
   prefix.slice(-4) == suffix ?
     prefix = prefix.slice(0, -4) :

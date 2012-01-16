@@ -3,8 +3,9 @@
   <head>
     <script src="../build/yuno.js"></script>
     <script>
-    yuno.use("yuno.Object.Target", "yuno.Object.Handler").and(function (Target, Handler) {
+    yuno.use("events.EventEmitter", "yuno.Object.Target", "yuno.Object.Handler").and(function (EventEmitter, Target, Handler) {
         alert([
+            EventEmitter === events.EventEmitter,
             yuno.Object.Target === Target && !!Target,
             yuno.Object.Handler === Handler && !!Handler
         ]);
