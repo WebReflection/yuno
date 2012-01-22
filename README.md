@@ -4,7 +4,7 @@ In this era where JavaScript is used in both browsers and server side, there is 
 
 Y U NO use() MODULES and() add() STUFF !!!
 ------------------------------------------
-![meme logo](http://s3.amazonaws.com/ragefaces/fd910848b62298e03671f2e200c4c245.png width=200px)
+![meme logo](http://www.3site.eu/images/yuno.png)
 
 Features
 --------
