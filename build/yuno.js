@@ -47,7 +47,7 @@
     }
     return defineProperty(modules.r = result, "and", {value: function and(callback) {
       ready(modules) ?
-        callback.apply(result, modules) :
+        callback.apply(window, modules) :
         modules.c = callback
       ;
     }});
@@ -74,7 +74,7 @@
               current.splice(i, 1);
               if (c = modules.c) {
                 delete modules.c;
-                c.apply(modules.r, modules);
+                c.apply(window, modules);
               }
               i = current.length;
             }
