@@ -1,0 +1,14 @@
+{
+    "name": "yuno"
+  , "version": "0.1.0"
+  , "description": "common browser and node module loader"
+  , "homepage": "https://github.com/WebReflection/yuno"
+  , "keywords": ["AMD", "require", "loader", "browser"]
+  , "author": "Andrea Giammarchi"
+  , "repository":{
+        "type": "git"
+      , "url": "https://github.com/WebReflection/yuno.git"
+    }
+  , "main": "./src/yunode.js"
+  , "engines": { "node": ">= 0.4.0" }
+}
