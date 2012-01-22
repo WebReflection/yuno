@@ -12,7 +12,7 @@ Features
   * **synchronous and asynchronous** with parallel scripts injection in the second case to speed up multiple dependencies resolution
   * **automatic asynchronous cross dependencies resolution** where if two different scripts requires same module before being executed, this will be loaded once and notified as soon as it's loaded
   * **in between AMD and CommonJS require**, a semantic `add()` method to explicitly *define* modules plus `use()` to *require* one or more modules before execution
-  * **smart synchronous loader** passing through normal *require* first, require through current *path* after, and resolving through global namespace as fall back for *node.je*. For browsers the **combiner** will be available soon to be able to create **all in one packages**
+  * **smart synchronous loader** passing through normal *require* first, require through current *path* after, and resolving through global namespace as fall back for *node.js*. For browsers the **combiner** will be available soon to be able to create **all in one packages**
 
 API
 ---
